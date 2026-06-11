@@ -8,4 +8,5 @@ module.exports = (router) => {
     router.route('/article/clap').post(articleController.clapArticle);
     router.route('/article/comment').post(articleController.commentArticle);
     router.route('/article/:id').get(articleController.getArticle);
+    router.route('/article/:id').delete(articleController.deleteArticle);
 };

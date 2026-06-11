@@ -3,6 +3,11 @@ const User = require('./../models/User');
 const cloudinary = require('cloudinary').v2;
 
 module.exports = {
+    deleteArticle: (req, res, next) => {
+        Article.findByIdAndDelete(req.params.id).then((article) => {
+            return res.sendStatus(200);
+        }).catch(next);
+    },
     addArticle: async (req, res, next) => {
         try {
             let { text, title, claps, description } = req.body;

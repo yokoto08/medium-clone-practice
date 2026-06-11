@@ -73,3 +73,18 @@ export function toggleOpen() {
         dispatch({ type: 'TOGGLE_MODAL', modalMode: true });
     }
 }
+
+export function deleteArticle(article_id) {
+    return (dispatch) => {
+        axios.delete(`${url}article/${article_id}`).then((res) => {
+            window.location.href = '/';
+        }).catch((err) => console.log(err));
+    }
+}
+export function commentArticle(article_id, author_id, text) {
+    return (dispatch) => {
+        axios.post(`${url}article/comment`, { article_id, author_id, comment: text }).then((res) => {
+            window.location.reload();
+        }).catch((err) => console.log(err));
+    }
+}

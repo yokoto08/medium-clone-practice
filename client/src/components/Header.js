@@ -15,8 +15,10 @@ const Header = ({ isAuth, user, toggleOpen }) => {
                 ) : (
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <Link to="/editor" style={{ marginRight: '20px', color: '#03a87c', textDecoration: 'none', fontSize: '16px', border: '1px solid #03a87c', padding: '5px 10px', borderRadius: '4px' }}>Написать статью</Link>
-                        <span style={{ marginRight: '15px', fontWeight: 'bold' }}>{user.name}</span>
-                        <img src={user.provider_pic} alt="avatar" style={{ width: '40px', borderRadius: '50%' }} />
+                        <Link to={`/profile/${user._id}`} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: '#000' }}>
+                            <span style={{ marginRight: '15px', fontWeight: 'bold' }}>{user.name}</span>
+                            <img src={user.provider_pic} alt="avatar" style={{ width: '40px', borderRadius: '50%' }} />
+                        </Link>
                     </div>
                 )}
             </div>
