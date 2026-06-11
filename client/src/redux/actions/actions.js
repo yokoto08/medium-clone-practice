@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = process.env.NODE_ENV === 'production' ? "/api/" : "http://localhost:5001/api/";
+const url = 'https://medium-clone-practice.onrender.com/api/';
 
 export function loadArticles() {
     return (dispatch) => {
