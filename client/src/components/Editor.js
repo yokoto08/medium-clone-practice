@@ -40,7 +40,7 @@ const Editor = ({ user }) => {
         formdata.append('description', description);
         formdata.append('claps', 0);
 
-        const url = process.env.NODE_ENV === 'production' ? "/api/" : "http://localhost:5001/api/";
+        const url = process.env.NODE_ENV === 'production' ? "https://medium-clone-practice.onrender.com/api/" : "http://localhost:5001/api/";
 
         axios.post(`${url}article`, formdata).then((res) => {
             navigate('/');
